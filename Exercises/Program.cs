@@ -6,6 +6,9 @@ namespace MethodsTutorial
     {
         static void Main()
         {
+            int[] Numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            ParametreMethodu(Numbers);
+
             int i = 5;
             OrnekMethod2(ref i);
             int Toplam;
@@ -30,7 +33,13 @@ namespace MethodsTutorial
             Toplam = Fn + Sn;
             Carpim = Fn * Sn;
         }
-
+        public static void ParametreMethodu(params int[] sayilar)
+        {
+            foreach (int sayi in sayilar)
+            {
+                Console.WriteLine(sayi);
+            }
+        }
 
     }
 }
