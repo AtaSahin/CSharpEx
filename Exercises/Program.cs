@@ -1,66 +1,32 @@
 ﻿using System;
 
-namespace MethodOverloadingExample
+namespace ClassTutorial
 {
-    class Calculator
+    public class Musteri
     {
-
-        public int Topla(int a, int b)
+        public int ID;
+        public string Adi;
+        public string Soyadi;
+        public void info()
         {
-            return a + b;
+            Console.WriteLine("Müşteri ID: {0} İsim: {1} {2}", ID, Adi, Soyadi);
         }
 
-
-        public double Topla(double a, double b)
-        {
-            return a + b;
-        }
-
-
-        public int Topla(int a, int b, int c)
-        {
-            return a + b + c;
-        }
-
-
-        public int Carp(int a, int b)
-        {
-            return a * b;
-        }
-
-
-        public double Carp(double a, double b)
-        {
-            return a * b;
-        }
     }
-
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            Calculator hesapMakinesi = new Calculator();
-
-
-            int toplamInt = hesapMakinesi.Topla(5, 3);
-            Console.WriteLine("Toplam (integer): " + toplamInt);
-
-            double toplamDouble = hesapMakinesi.Topla(5.5, 3.3);
-            Console.WriteLine("Toplam (double): " + toplamDouble);
-
-
-            int toplamUcInt = hesapMakinesi.Topla(2, 4, 6);
-            Console.WriteLine("Toplam (üç integer): " + toplamUcInt);
-
-
-            int carpimInt = hesapMakinesi.Carp(4, 3);
-            Console.WriteLine("Çarpım (integer): " + carpimInt);
-
-
-            double carpimDouble = hesapMakinesi.Carp(4.5, 2.5);
-            Console.WriteLine("Çarpım (double): " + carpimDouble);
-
-            Console.ReadKey();
+            Musteri m1 = new Musteri();
+            m1.ID = 1;
+            m1.Adi = "Ahmet";
+            m1.Soyadi = "Yılmaz";
+            m1.info();
+            Musteri m2 = new Musteri();
+            m2.ID = 2;
+            m2.Adi = "Mehmet";
+            m2.Soyadi = "Yılmaz";
+            m2.info();
         }
     }
 }
