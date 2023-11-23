@@ -1,0 +1,15 @@
+c:\Users\90545\Desktop\Practices\CSharpEx\Exercises\bin\Debug\net6.0\Exercises.exe
+c:\Users\90545\Desktop\Practices\CSharpEx\Exercises\bin\Debug\net6.0\Exercises.deps.json
+c:\Users\90545\Desktop\Practices\CSharpEx\Exercises\bin\Debug\net6.0\Exercises.runtimeconfig.json
+c:\Users\90545\Desktop\Practices\CSharpEx\Exercises\bin\Debug\net6.0\Exercises.dll
+c:\Users\90545\Desktop\Practices\CSharpEx\Exercises\bin\Debug\net6.0\Exercises.pdb
+c:\Users\90545\Desktop\Practices\CSharpEx\Exercises\obj\Debug\net6.0\Exercises.csproj.AssemblyReference.cache
+c:\Users\90545\Desktop\Practices\CSharpEx\Exercises\obj\Debug\net6.0\Exercises.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\90545\Desktop\Practices\CSharpEx\Exercises\obj\Debug\net6.0\Exercises.AssemblyInfoInputs.cache
+c:\Users\90545\Desktop\Practices\CSharpEx\Exercises\obj\Debug\net6.0\Exercises.AssemblyInfo.cs
+c:\Users\90545\Desktop\Practices\CSharpEx\Exercises\obj\Debug\net6.0\Exercises.csproj.CoreCompileInputs.cache
+c:\Users\90545\Desktop\Practices\CSharpEx\Exercises\obj\Debug\net6.0\Exercises.dll
+c:\Users\90545\Desktop\Practices\CSharpEx\Exercises\obj\Debug\net6.0\refint\Exercises.dll
+c:\Users\90545\Desktop\Practices\CSharpEx\Exercises\obj\Debug\net6.0\Exercises.pdb
+c:\Users\90545\Desktop\Practices\CSharpEx\Exercises\obj\Debug\net6.0\Exercises.genruntimeconfig.cache
+c:\Users\90545\Desktop\Practices\CSharpEx\Exercises\obj\Debug\net6.0\ref\Exercises.dll
