@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MethodsTutorial
 {
@@ -10,29 +6,31 @@ namespace MethodsTutorial
     {
         static void Main()
         {
-            Program p = new Program();
-            int sonuc = p.Topla(5, 6);
-            Console.WriteLine("toplam = " + sonuc);
-            int sonuc2 = Carp(5, 6);
-            Console.WriteLine("carpim = " + sonuc2);
-            p.EkranaYazdir("Merhaba");
+            int i = 5;
+            OrnekMethod2(ref i);
+            int Toplam;
+            int Carpim;
+            Hesapla(5, 6, out Toplam, out Carpim);
+            Console.WriteLine("Toplam: {0} Çarpım: {1}", Toplam, Carpim);
             Console.ReadKey();
         }
-        private int Topla(int a, int b)
-        {
-            return a + b;
 
-        }
-        static int Carp(int x, int y)
+        public static void OrnekMethod(int a)
         {
-            return x * y;
+            a = 5;
         }
 
-        private void EkranaYazdir(string metin)
+        public static void OrnekMethod2(ref int b)
         {
-            Console.WriteLine(metin);
+            b = 100;
         }
+
+        public static void Hesapla(int Fn, int Sn, out int Toplam, out int Carpim)
+        {
+            Toplam = Fn + Sn;
+            Carpim = Fn * Sn;
+        }
+
 
     }
-
 }
