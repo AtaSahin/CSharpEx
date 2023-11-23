@@ -1,45 +1,66 @@
 ﻿using System;
 
-namespace MethodsTutorial
+namespace MethodOverloadingExample
 {
+    class Calculator
+    {
+
+        public int Topla(int a, int b)
+        {
+            return a + b;
+        }
+
+
+        public double Topla(double a, double b)
+        {
+            return a + b;
+        }
+
+
+        public int Topla(int a, int b, int c)
+        {
+            return a + b + c;
+        }
+
+
+        public int Carp(int a, int b)
+        {
+            return a * b;
+        }
+
+
+        public double Carp(double a, double b)
+        {
+            return a * b;
+        }
+    }
+
     class Program
     {
         static void Main()
         {
-            int[] Numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-            ParametreMethodu(Numbers);
+            Calculator hesapMakinesi = new Calculator();
 
-            int i = 5;
-            OrnekMethod2(ref i);
-            int Toplam;
-            int Carpim;
-            Hesapla(5, 6, out Toplam, out Carpim);
-            Console.WriteLine("Toplam: {0} Çarpım: {1}", Toplam, Carpim);
+
+            int toplamInt = hesapMakinesi.Topla(5, 3);
+            Console.WriteLine("Toplam (integer): " + toplamInt);
+
+            double toplamDouble = hesapMakinesi.Topla(5.5, 3.3);
+            Console.WriteLine("Toplam (double): " + toplamDouble);
+
+
+            int toplamUcInt = hesapMakinesi.Topla(2, 4, 6);
+            Console.WriteLine("Toplam (üç integer): " + toplamUcInt);
+
+
+            int carpimInt = hesapMakinesi.Carp(4, 3);
+            Console.WriteLine("Çarpım (integer): " + carpimInt);
+
+
+            double carpimDouble = hesapMakinesi.Carp(4.5, 2.5);
+            Console.WriteLine("Çarpım (double): " + carpimDouble);
+
             Console.ReadKey();
         }
-
-        public static void OrnekMethod(int a)
-        {
-            a = 5;
-        }
-
-        public static void OrnekMethod2(ref int b)
-        {
-            b = 100;
-        }
-
-        public static void Hesapla(int Fn, int Sn, out int Toplam, out int Carpim)
-        {
-            Toplam = Fn + Sn;
-            Carpim = Fn * Sn;
-        }
-        public static void ParametreMethodu(params int[] sayilar)
-        {
-            foreach (int sayi in sayilar)
-            {
-                Console.WriteLine(sayi);
-            }
-        }
-
     }
 }
