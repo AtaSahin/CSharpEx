@@ -1,14 +1,50 @@
 ﻿using System;
 
-public class Circle
+public class Ogrenci
 {
+    private string ad;
+    private int yas;
 
-    public double Radius { get; set; }
 
-
-    public static double CalculateArea(double radius)
+    public string Ad
     {
-        return Math.PI * Math.Pow(radius, 2);
+        get { return ad; }
+        set
+        {
+
+            if (!string.IsNullOrEmpty(value))
+            {
+                ad = value;
+            }
+            else
+            {
+                Console.WriteLine("Geçersiz ad değeri.....!");
+            }
+        }
+    }
+
+
+    public int Yas
+    {
+        get { return yas; }
+        set
+        {
+
+            if (value >= 0)
+            {
+                yas = value;
+            }
+            else
+            {
+                Console.WriteLine("Geçersiz yaş değeri....");
+            }
+        }
+    }
+
+
+    public void BilgileriYazdir()
+    {
+        Console.WriteLine($"Ad: {ad}, Yas: {yas}");
     }
 }
 
@@ -17,13 +53,19 @@ class Program
     static void Main()
     {
 
-        Console.Write("Dairenin yarıçapını girin: ");
-        double radius = Convert.ToDouble(Console.ReadLine());
+        Ogrenci ogrenci = new Ogrenci();
+
+        ogrenci.Ad = "Ata";
+        ogrenci.Yas = 23;
 
 
-        double area = Circle.CalculateArea(radius);
+        ogrenci.BilgileriYazdir();
 
 
-        Console.WriteLine("Dairenin Alanı: " + area);
+        ogrenci.Ad = "";
+        ogrenci.Yas = -5;
+
+
+        ogrenci.BilgileriYazdir();
     }
 }
