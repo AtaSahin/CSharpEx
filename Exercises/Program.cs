@@ -1,9 +1,17 @@
 ﻿using System;
 
-public class Ogrenci
+public class Calisan
 {
     private string ad;
-    private int yas;
+    private decimal maas;
+    private string pozisyon;
+
+    public Calisan(string ad, decimal maas, string pozisyon)
+    {
+        Ad = ad;
+        Maas = maas;
+        Pozisyon = pozisyon;
+    }
 
 
     public string Ad
@@ -11,7 +19,6 @@ public class Ogrenci
         get { return ad; }
         set
         {
-
             if (!string.IsNullOrEmpty(value))
             {
                 ad = value;
@@ -24,19 +31,35 @@ public class Ogrenci
     }
 
 
-    public int Yas
+    public decimal Maas
     {
-        get { return yas; }
+        get { return maas; }
         set
         {
-
             if (value >= 0)
             {
-                yas = value;
+                maas = value;
             }
             else
             {
-                Console.WriteLine("Geçersiz yaş değeri....");
+                Console.WriteLine("Geçersiz maaş değeri....");
+            }
+        }
+    }
+
+
+    public string Pozisyon
+    {
+        get { return pozisyon; }
+        set
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                pozisyon = value;
+            }
+            else
+            {
+                Console.WriteLine("Geçersiz pozisyon değeri.....");
             }
         }
     }
@@ -44,7 +67,7 @@ public class Ogrenci
 
     public void BilgileriYazdir()
     {
-        Console.WriteLine($"Ad: {ad}, Yas: {yas}");
+        Console.WriteLine($"Ad: {Ad}, Maaş: {Maas}, Pozisyon: {Pozisyon}");
     }
 }
 
@@ -53,19 +76,16 @@ class Program
     static void Main()
     {
 
-        Ogrenci ogrenci = new Ogrenci();
-
-        ogrenci.Ad = "Ata";
-        ogrenci.Yas = 23;
+        Calisan calisan = new Calisan("Ata", 1000, "Yazılım Personeli");
 
 
-        ogrenci.BilgileriYazdir();
+        calisan.BilgileriYazdir();
+
+        calisan.Ad = "";
+        calisan.Maas = -1000;
+        calisan.Pozisyon = "";
 
 
-        ogrenci.Ad = "";
-        ogrenci.Yas = -5;
-
-
-        ogrenci.BilgileriYazdir();
+        calisan.BilgileriYazdir();
     }
 }
