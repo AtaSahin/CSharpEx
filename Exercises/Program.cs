@@ -1,73 +1,27 @@
 ﻿using System;
 
-public class Calisan
+public class Islemci
 {
-    private string ad;
-    private decimal maas;
-    private string pozisyon;
+    private string islemciMarka;
 
-    public Calisan(string ad, decimal maas, string pozisyon)
+    public string IslemciMarka
     {
-        Ad = ad;
-        Maas = maas;
-        Pozisyon = pozisyon;
-    }
-
-
-    public string Ad
-    {
-        get { return ad; }
         set
         {
             if (!string.IsNullOrEmpty(value))
             {
-                ad = value;
+                islemciMarka = value;
             }
             else
             {
-                Console.WriteLine("Geçersiz ad değeri.....!");
+                Console.WriteLine("Geçersiz işlemci markası.");
             }
         }
     }
 
-
-    public decimal Maas
+    public void BilgiYazdir()
     {
-        get { return maas; }
-        set
-        {
-            if (value >= 0)
-            {
-                maas = value;
-            }
-            else
-            {
-                Console.WriteLine("Geçersiz maaş değeri....");
-            }
-        }
-    }
-
-
-    public string Pozisyon
-    {
-        get { return pozisyon; }
-        set
-        {
-            if (!string.IsNullOrEmpty(value))
-            {
-                pozisyon = value;
-            }
-            else
-            {
-                Console.WriteLine("Geçersiz pozisyon değeri.....");
-            }
-        }
-    }
-
-
-    public void BilgileriYazdir()
-    {
-        Console.WriteLine($"Ad: {Ad}, Maaş: {Maas}, Pozisyon: {Pozisyon}");
+        Console.WriteLine($"İşlemci Markası: {islemciMarka}");
     }
 }
 
@@ -75,17 +29,12 @@ class Program
 {
     static void Main()
     {
-
-        Calisan calisan = new Calisan("Ata", 1000, "Yazılım Personeli");
-
-
-        calisan.BilgileriYazdir();
-
-        calisan.Ad = "";
-        calisan.Maas = -1000;
-        calisan.Pozisyon = "";
+        Islemci bilgisayarIslemci = new Islemci();
+        bilgisayarIslemci.IslemciMarka = "Intel";
 
 
-        calisan.BilgileriYazdir();
+        bilgisayarIslemci.IslemciMarka = "";
+
+        bilgisayarIslemci.BilgiYazdir();
     }
 }
