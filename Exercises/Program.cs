@@ -1,40 +1,36 @@
 ﻿using System;
-
-public class Islemci
+namespace Inheritance
 {
-    private string islemciMarka;
 
-    public string IslemciMarka
+    public class Customer
     {
-        set
+        public string Name;
+        public string LastName;
+        public string City;
+
+        public void PrintFullName()
         {
-            if (!string.IsNullOrEmpty(value))
-            {
-                islemciMarka = value;
-            }
-            else
-            {
-                Console.WriteLine("Geçersiz işlemci markası.");
-            }
+            Console.WriteLine("Full Name: {0} {1}", Name, LastName);
         }
+
+    }
+    public class LocalCustomer : Customer
+    {
+        public string Address;
+        public string Phone;
+    }
+    public class ForeignCustomer : Customer
+    {
+        public string Country;
     }
 
-    public void BilgiYazdir()
+    public class Program
     {
-        Console.WriteLine($"İşlemci Markası: {islemciMarka}");
-    }
-}
+        public static void Main(string[] args)
+        {
 
-class Program
-{
-    static void Main()
-    {
-        Islemci bilgisayarIslemci = new Islemci();
-        bilgisayarIslemci.IslemciMarka = "Intel";
+            Console.ReadKey();
 
-
-        bilgisayarIslemci.IslemciMarka = "";
-
-        bilgisayarIslemci.BilgiYazdir();
+        }
     }
 }
