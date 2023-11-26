@@ -1,36 +1,53 @@
 ﻿using System;
-namespace Inheritance
+
+class Person
 {
 
-    public class Customer
-    {
-        public string Name;
-        public string LastName;
-        public string City;
+    public string Name { get; set; }
+    public int Age { get; set; }
 
-        public void PrintFullName()
-        {
-            Console.WriteLine("Full Name: {0} {1}", Name, LastName);
-        }
-
-    }
-    public class LocalCustomer : Customer
+    public Person(string name, int age)
     {
-        public string Address;
-        public string Phone;
-    }
-    public class ForeignCustomer : Customer
-    {
-        public string Country;
+        Name = name;
+        Age = age;
     }
 
-    public class Program
+
+    public void DisplayInfo()
     {
-        public static void Main(string[] args)
-        {
+        Console.WriteLine($"Name: {Name}, Age: {Age}");
+    }
+}
 
-            Console.ReadKey();
+class Employee : Person
+{
 
-        }
+    public string Department { get; set; }
+
+
+    public Employee(string name, int age, string department)
+        : base(name, age)
+    {
+        Department = department;
+    }
+
+
+    public void DisplayEmployeeInfo()
+    {
+        Console.WriteLine($"Name: {Name}, Age: {Age}, Department: {Department}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+
+        Person person = new Person("John Doe", 30);
+        person.DisplayInfo();
+
+
+        Employee employee = new Employee("Jane Doe", 25, "IT");
+        employee.DisplayEmployeeInfo();
     }
 }
