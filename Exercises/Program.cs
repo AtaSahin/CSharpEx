@@ -1,40 +1,48 @@
 ﻿using System;
 
-class Person
+
+public interface IArayuz
 {
+    void Metot1();
+    string Metot2(int sayi);
+}
 
-    public string Name { get; set; }
-    public int Age { get; set; }
 
-    public Person(string name, int age)
+public class IlkSinif : IArayuz
+{
+    public void Metot1()
     {
-        Name = name;
-        Age = age;
+        Console.WriteLine("IlkSinif - Metot1 çağrıldı.");
     }
 
-
-    public void DisplayInfo()
+    public string Metot2(int sayi)
     {
-        Console.WriteLine($"Name: {Name}, Age: {Age}");
+        return $"IlkSinif - Metot2 çağrıldı. Parametre: {sayi}";
     }
 }
 
-class Employee : Person
+
+public class IkinciSinif : IArayuz
 {
-
-    public string Department { get; set; }
-
-
-    public Employee(string name, int age, string department)
-        : base(name, age)
+    public void Metot1()
     {
-        Department = department;
+        Console.WriteLine("IkinciSinif - Metot1 çağrıldı.");
     }
 
-
-    public void DisplayEmployeeInfo()
+    public string Metot2(int sayi)
     {
-        Console.WriteLine($"Name: {Name}, Age: {Age}, Department: {Department}");
+        return $"IkinciSinif - Metot2 çağrıldı. Parametre: {sayi}";
+    }
+}
+
+
+public class AnaSinif
+{
+    public void ArayuzKullanimi(IArayuz arayuz)
+    {
+        arayuz.Metot1();
+        string sonuc = arayuz.Metot2(99);
+        Console.WriteLine(sonuc);
     }
 }
 
@@ -43,11 +51,15 @@ class Program
     static void Main()
     {
 
-        Person person = new Person("John Doe", 30);
-        person.DisplayInfo();
+        IlkSinif ilkSinifOrnegi = new IlkSinif();
+        IkinciSinif ikinciSinifOrnegi = new IkinciSinif();
 
 
-        Employee employee = new Employee("Jane Doe", 25, "IT");
-        employee.DisplayEmployeeInfo();
+        AnaSinif anaSinifOrnegi = new AnaSinif();
+
+
+        anaSinifOrnegi.ArayuzKullanimi(ilkSinifOrnegi);
+        Console.WriteLine("---------------");
+        anaSinifOrnegi.ArayuzKullanimi(ikinciSinifOrnegi);
     }
 }
